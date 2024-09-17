@@ -21,5 +21,13 @@ values('17455','Topodey','SI SE PUEDE MI GENTE',60)
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
 values('88888','Mayse','Todos contra todos',35)
 
+--insert solo con los campos obligatorios
+insert into videojuegos(codigo,nombre,valoracion)
+values('00005','Surigat',20)
 
+insert into videojuegos(codigo,nombre,valoracion)
+values('01115','Moret',69)
+
+insert into videojuegos(codigo,nombre,valoracion)
+values('02255','Contet',80)
 
