@@ -24,11 +24,15 @@ insert into productos (codigo,nombre,descripcion,precio,stock)
 values('000012','Rosquitas','Lo mejor para picar en tu tiempo libre',1.34,12)
 
 
+--se ejecutan solo los campos obligatorios
+insert into productos (codigo,nombre,precio,stock)
+values('019823','Calamar',7,9)
 
+insert into productos (codigo,nombre,precio,stock)
+values('657433','Camaron',3.98,4)
 
-
-
-
+insert into productos (codigo,nombre,precio,stock)
+values('090767','Carne',3.00,7)
 
 
 
