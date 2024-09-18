@@ -6,6 +6,12 @@ create videojuegos(
 	valoracion int not null,
 	constraint videojuegos_pk primary key(codigo)
 )
+
+select * from videojuegos
+--actualizar decripcion cuya valoracion sea mayor que 9
+update videojuegos set descripcion='Mejor Puntuado'
+where valoracion > 9
+
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
 values('12345','Micki mause','gamer profecional con un IQ del 90',100)
 
