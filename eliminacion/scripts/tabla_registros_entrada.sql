@@ -6,6 +6,13 @@ create table registros_entrada(
 	hora time not null,
 	constraint registros_entrada_pk primary key(codigo_registro)
 )
+
+select * from registros_entrada
+--elimina todos los registros del mes de junio
+delete from registros_entrada
+where EXTRACT(MONTH FROM fecha)=6
+
+
 insert into registros_entrada(codigo_registro,cedula_empleado,fecha,hora)
 values('896756','1234567890','20/09/2008','13:00')
 
