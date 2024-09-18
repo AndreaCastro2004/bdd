@@ -8,6 +8,17 @@ create table transacciones(
 	hora time not null,
 	constraint transacciones_pk primary key(codigo)
 )
+
+select * from transacciones 
+--elemina transferencia entre 14 y 18 horas del mes de agosto año actual
+delete from transacciones
+where EXTRACT(HOUR FROM hora)>=14
+and  EXTRACT(HOUR FROM hora)<=18
+and EXTRACT(MONTH FROM fecha)=8
+and EXTRACT (YEAR FROM fecha)=2024
+
+
+
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values('12345','09876',160,'c','13/03/2000','12:00')
 
