@@ -6,6 +6,12 @@ create table cuentas(
 	saldo money not null,
 	constraint cuentas_pk primary key(numero_cuenta)
 )
+select * from cuentas
+--elimina todas las cuentas que comiensa la cedula con 10
+delete from cuentas 
+where cedula_propietario like '10%'
+
+
 insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
 values('12345','17181','17/09/2004',100)
 
