@@ -7,6 +7,13 @@ create table estudiantes(
 	fecha_nacimiento date not null,
 	constraint estudiantes_pk primary key(cedula)
 )
+select * from estudiantes
+--elima a los que terminan la cedula con 05
+delete from estudiantes
+where cedula like '%05'
+
+
+
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
 values('1234567890','Maria','Zambrano','mariZam_ldu@.gmail.com','15/03/1978')
 
