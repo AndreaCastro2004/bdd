@@ -6,6 +6,20 @@ create table cuentas(
 	saldo money not null,
 	constraint cuentas_pk primary key(numero_cuenta)
 )
+--traer el numero de cuenta y saldo de las cuentas
+select numero_cuenta,saldo from cuentas 
+--traer registros de hoy hasta 2 meses antes
+select * from cuentas 
+where fecha_creacion
+between '18/09/2024' and '18/07/2024'
+--traer numero_cuenta y saldo de hoy hasta 2 meses antes
+select numero_cuenta,saldo from cuentas
+where fecha_creacion
+between '18/09/2024' and '18/07/2024'
+
+
+
+
 insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
 values('12345','17181','17/09/2004',100)
 
