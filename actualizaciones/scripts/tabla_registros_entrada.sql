@@ -6,6 +6,14 @@ create table registros_entrada(
 	hora time not null,
 	constraint registros_entrada_pk primary key(codigo_registro)
 )
+
+select * from registros_entrada
+--actualiza todas las cedulas para el mes de agosto
+update registros_entrada set cedula_empleado='082345679'
+where EXTRACT(MONTH FROM fecha)=8
+
+
+
 insert into registros_entrada(codigo_registro,cedula_empleado,fecha,hora)
 values('896756','1234567890','20/09/2008','13:00')
 
