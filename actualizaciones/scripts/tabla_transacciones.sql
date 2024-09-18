@@ -8,6 +8,20 @@ create table transacciones(
 	hora time not null,
 	constraint transacciones_pk primary key(codigo)
 )
+select * from transacciones
+--actualiza el tipo='T'(transaccion>100 y <500 en mes 9 entre 14:00 y 20:00)
+update transacciones set tipo='T'
+--validacion MONTO
+Where monto>money(100) and monto<money(500)
+--validacion de mes
+and EXTRACT(MONTH FROM fecha)=9
+--validacion de hora 
+and EXTRACT (HOUR FROM hora)>=14
+and EXTRACT (HOUR FROM hora)<=20
+
+
+
+
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values('12345','09876',160,'c','13/03/2000','12:00')
 
