@@ -6,6 +6,18 @@ create videojuegos(
 	valoracion int not null,
 	constraint videojuegos_pk primary key(codigo)
 )
+
+--seleccionar todos los videojuegos que comience con nombre c
+select * from videojuegos
+where nombre like ('C%')
+--seleccionar videojuegos con valoracion entre 9 y 10
+select * from videojuegos
+where valoracion between '9' and '10'
+--seleccionar videojuegos con descripcion null
+select * from videojuegos
+where descripcion is null
+
+
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
 values('12345','Micki mause','gamer profecional con un IQ del 90',100)
 
