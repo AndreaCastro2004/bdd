@@ -6,6 +6,11 @@ create videojuegos(
 	valoracion int not null,
 	constraint videojuegos_pk primary key(codigo)
 )
+
+select * from videojuegos
+--elimina videojuego con valoracion menor 7
+delete from videojuegos
+where valoracion<7
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
 values('12345','Micki mause','gamer profecional con un IQ del 90',100)
 
