@@ -8,6 +8,20 @@ create table transacciones(
 	hora time not null,
 	constraint transacciones_pk primary key(codigo)
 )
+
+--seleccionar todas las transacciones tipo D
+select * from transacciones
+where tipo='D'
+--Transacciones montos entre 200 y 2000
+select * from transacciones
+where monto between money(200) and money(2000)
+--seleccionar  fecha diferente a null
+select codigo,monto,tipo,fecha from transacciones
+where fecha is not null
+
+
+
+
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values('12345','09876',160,'c','13/03/2000','12:00')
 
