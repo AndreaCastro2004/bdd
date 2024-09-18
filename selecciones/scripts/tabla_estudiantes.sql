@@ -7,6 +7,18 @@ create table estudiantes(
 	fecha_nacimiento date not null,
 	constraint estudiantes_pk primary key(cedula)
 )
+
+--Traer nombre y cedula estudiante
+select nombre,cedula from estudiantes
+--traer nombres estudiantes que empiece cedula con 17
+select nombre from estudiantes
+where cedula like '17%'
+--traer nombres completos cuyo nombre empiece con A
+select nombre,apellido from estudiantes
+where nombre like 'A%'
+
+
+
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
 values('1234567890','Maria','Zambrano','mariZam_ldu@.gmail.com','15/03/1978')
 
