@@ -8,6 +8,18 @@ create table productos(
 	stock int not null,
 	constraint productos_pk primary key(codigo)
 )
+
+--crear select productos empiezan con Q
+select * from productos 
+where nombre like 'Q%'
+--productos con descripcion null
+select * from productos
+where descripcion is null
+--productos con precio entre 2 y 3
+select * from productos
+where precio between money(2) and money(3)
+
+
 insert into productos (codigo,nombre,descripcion,precio,stock)
 values('123455','leche','Aporta vitaminas A, B y C',1.00,5)
 
