@@ -8,6 +8,15 @@ create table productos(
 	stock int not null,
 	constraint productos_pk primary key(codigo)
 )
+select * from productos
+
+--actualizar el stock a 0 en la descricion que tengan null
+update productos set stock=0
+where descripcion is null
+
+
+
+
 insert into productos (codigo,nombre,descripcion,precio,stock)
 values('123455','leche','Aporta vitaminas A, B y C',1.00,5)
 
