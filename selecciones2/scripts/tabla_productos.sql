@@ -20,6 +20,19 @@ select * from productos
 where precio between money(2) and money(3)
 
 
+--todos los productos con stock=10 y precio<10
+select * from productos 
+where stock='10' and precio<money(10)
+-- selecionar nombre stock de de los productos con m en nombre o esten en blanco
+select nombre,stock from productos
+where nombre like 'm' or descripcion is null
+-- seleccionar el nombre con descripcion null o stock 0
+select nombre from productos
+where descripcion is null or stock='0'
+
+
+
+
 
 insert into productos(codigo,nombre,descripcion,precio,stock) 
 values (1,'Jabón','Lava todo',3.50,10);
