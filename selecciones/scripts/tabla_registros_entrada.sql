@@ -6,6 +6,17 @@ create table registros_entrada(
 	hora time not null,
 	constraint registros_entrada_pk primary key(codigo_registro)
 )
+
+--seleccionar todas las cedula fecha y hora
+select cedula_empleado,fecha,hora from registros_entrada
+--sleccionar los registros de entrada entre 7:00 y 14:00
+select * from registros_entrada 
+where hora between '7:00' and '14:00'
+--seelccionar registros_entrada mayores a 8:00
+select *from registros_entrada
+where hora>'8:00'
+
+
 insert into registros_entrada(codigo_registro,cedula_empleado,fecha,hora)
 values('896756','1234567890','20/09/2008','13:00')
 
