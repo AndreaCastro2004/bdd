@@ -6,6 +6,14 @@ create table cuentas(
 	saldo money not null,
 	constraint cuentas_pk primary key(numero_cuenta)
 )
+
+select *from cuentas
+--actualizar el saldo de las cedulas que empiecen por 17
+update cuentas set saldo=10
+where cedula_propietario like '17%'
+
+
+
 insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
 values('12345','17181','17/09/2004',100)
 
