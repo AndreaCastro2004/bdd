@@ -18,6 +18,15 @@ where fecha_creacion
 between '18/09/2024' and '18/07/2024'
 
 
+--1
+select numero_cuenta,saldo from cuentas
+where saldo>money(100) and saldo<money(1000)
+--2
+select * from cuentas
+where fecha_creacion between '19/9/2024' and '19/9/2023'
+--3
+select * from cuentas
+where saldo='0' or cedula_propietario like '%2'
 
 
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
