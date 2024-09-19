@@ -24,7 +24,7 @@ select nombre,apellido from estudiantes
 where nombre like 'M%' or apellido like '%z'
 --2 los estudiantes que tienen el 32 y que empiecen con 18 en cedula
 select nombre from estudiantes
-where cedula like '32' and cedula like '18%'
+where cedula like '%32%' and cedula like '18%'
 --3 tarer nombres completos de cedula termina en 6 o empiesa en 17
 select nombre, apellido from estudiantes
 where cedula like '%6' or cedula like '17%'
