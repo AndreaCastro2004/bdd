@@ -20,6 +20,20 @@ select codigo,monto,tipo,fecha from transacciones
 where fecha is not null
 
 
+--1 transacciones tipo c, numero cuenta entre 222001 y 22004
+select * from transacciones
+where tipo='C' and numero_cuenta between '222001' and '22004'
+--2 transacciones tipo d, realizadas 25/5 y rango entre 22007 y 22010
+select * from transacciones 
+where tipo='D' and EXTRACT (DAY FROM fecha)=25 
+and EXTRACT(MONTH FROM fecha)=5
+and numero_cuenta between '22007' and '22010'
+--3 codigo entre 1 y 5 numero_cuenta  entre 22002 y 22004 realizadas el 26 y 29/5
+select * from transacciones
+where (codigo between '1' and '5') and (numero_cuenta between '22002' and '22004')
+and EXTRACT(DAY FROM fecha)=26 and EXTRACT(DAY FROM fecha)=29
+and EXTRACT (MONTH FROM fecha)=5
+
 
 
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
@@ -32,8 +46,8 @@ insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
 values(32165, '51437', 1050, 'D', '25/04/2020', '15:48');
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
 values(78542, '02147', 300, 'D', '20/03/2019', '22:19');
-insert into transacciones(codigo, numero_cuenta, monto, tipo, hora)
-values(23210, '32015', 400, 'C', '13:55');
+insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha,hora)
+values(23210, '32015', 400, 'C', '20/04/2019','13:55');
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
 values(35412, '85214', 600, 'D', '07/12/2015', '20:14');
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
