@@ -19,6 +19,17 @@ where descripcion is null
 
 
 
+--1 nombre contenga la letra c o que valoracion sea 7
+select * from videojuegos
+where nombre ilike '%c%' or valoracion='7'
+--2 select videojuegos codigo (3 and 7) o valoracion 7
+select * from videojuegos 
+where codigo between '3' and '7' or valoracion='7'
+--3 Valoracion>7 y nombre empiece con c o valoracion>8 y nombre empiece con D
+select * from videojuegos
+where valoracion>'7' and nombre like 'C%' or (valoracion>'8' and nombre like 'D%')
+
+
 
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
 values(07563, 'Call of Duty', 'juego de terror', 9);
