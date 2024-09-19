@@ -18,6 +18,27 @@ where hora>'8:00'
 
 
 
+--1
+select * from registros_entrada
+where EXTRACT(MONTH FROM fecha)=9 or cedula_empleado like '17%'
+--2
+select * from registros_entrada
+where EXTRACT(MONTH FROM fecha)=8 
+and cedula_empleado like '17%'
+and EXTRACT(HOUR FROM hora)>=8
+and EXTRACT (HOUR FROM hora)<=12
+--3
+select * from registros_entrada
+where EXTRACT(MONTH FROM fecha)=8 
+and (cedula_empleado like '17%'
+and EXTRACT(HOUR FROM hora)>=8
+and EXTRACT (HOUR FROM hora)<=12)
+or (EXTRACT (MONTH FROM fecha)=9
+and cedula_Empleado like '8%'
+and EXTRACT(HOUR FROM hora)>=9
+and EXTRACT (HOUR FROM hora)<=13)
+
+
 
 insert into registros_entrada(codigo_registro, cedula_empleado, fecha, hora)
 values(12345, '1754416489', '18/06/2023', '7:00');
