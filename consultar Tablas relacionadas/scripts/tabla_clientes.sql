@@ -37,5 +37,15 @@ values('1819191777','Juan','Zambrano');
 insert into clientes(cedula,nombre,apellido)
 values('1727374777','Lucas','Buena vista');
 
+--realizo la consulta
+select cl.nombre,cl.apellido from
+clientes cl,compras co
+where cl.cedula =co.cedula
+and cl.cedula like '%7%'
+--realizo subconsulta 
+select cl.cedula,cl.nombre,cl.apellido from
+clientes cl,compras co
+where cl.cedula =co.cedula
+and nombre='Monica'
 
 select * from clientes
