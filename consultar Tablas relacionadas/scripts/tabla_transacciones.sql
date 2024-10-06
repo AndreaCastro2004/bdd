@@ -44,3 +44,17 @@ insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
 values(9, '22004', 900, 'D', '23/10/2002', '9:00');
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
 values(10, '22001', 2000, 'C', '11/09/1999', '7:30');
+
+select *from transacciones
+select *from banco
+--consulta
+select trans.*,ban.*from 
+transacciones trans,banco ban 
+where trans.codigo=ban.codigo_transaccion
+and tipo='C'
+and numero_cuenta between '22001' and '22004'
+--Subconsulta
+select trans.* from 
+transacciones trans,banco ban 
+where trans.codigo=ban.codigo_transaccion
+and codigo_transaccion=1
