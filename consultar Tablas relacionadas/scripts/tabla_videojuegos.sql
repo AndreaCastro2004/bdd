@@ -27,11 +27,23 @@ values(1238, 'Tom and Jerry', 'juego de comedia', 8);
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
 values(1239, 'Ajedres', 'juego de destreza', 6);
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
-values(1231, 'God of Ward', 'guerra', 7);
+values(1231, 'God of Ward', 'guerra', 7);--codigo 
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
 values(122, 'Crash', 'juego de deprote', 9);
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
 values(121, 'Dragon Ball', 'guerra', 8);
 
 
-
+select * from videojuegos
+select * from plataformas
+--consulta
+select vi.*,pla.* from 
+videojuegos vi, plataformas pla
+where vi.codigo = pla.codigo_videojuego
+and descripcion ='guerra'
+or (valoracion>7 and nombre like 'C%') or (valoracion>8 and nombre like 'D')
+--subconsulta
+select pla.* from 
+videojuegos vi, plataformas pla
+where vi.codigo = pla.codigo_videojuego
+and codigo=1231
