@@ -14,6 +14,7 @@ references clientes(cedula)
 
 select * from clientes
 select * from compras
+--agrego columna edad 
 
 --10 insert
 insert into clientes(cedula,nombre,apellido)
@@ -43,7 +44,7 @@ clientes cl,compras co
 where cl.cedula =co.cedula
 and cl.cedula like '%7%'
 --realizo subconsulta 
-select cl.cedula,cl.nombre,cl.apellido from
+select cl. * from
 clientes cl,compras co
 where cl.cedula =co.cedula
 and nombre='Monica'
