@@ -6,33 +6,33 @@ create table compras(
 	monto decimal(10,2)not null,
 	constraint compras_pk primary key (cedula)
 )
---hago relacion con la tabla clientes
-alter table clientes
-add constraint clientes_compras_fk 
-foreign key (cedula)
-references compras(cedula)
+--corrigo la llave
+alter table compras
+drop constraint compras_pk cascade
+alter table compras
+add constraint compras_pk primary key (id_compra)
 
 select * from clientes
 select * from compras
 
 --10 insert
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('1','1717171798','2023-09-23','100');
+values('1','1717171777','2023-09-23','100');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('2','1717171777','2023-12-23','110');
+values('2','1787878777','2023-12-23','110');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('3','1877177177','2024-11-23','160');
+values('3','1797079777','2024-11-23','160');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('4','1877877877','2024-11-23','160');
+values('4','1727272777','2024-11-23','170');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('5','1977197197','2024-11-23','160');
+values('5','1737373777','2024-11-23','180');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('6','1277277277','2024-11-23','160');
+values('6','1747474477','2024-11-23','190');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('7','1377377377','2024-11-23','160');
+values('7','1757575757','2024-11-23','110');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('8','1477477477','2024-11-23','160');
+values('8','1767877777','2024-11-23','160');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('9','1577577577','2024-11-23','160');
+values('9','1819191777','2024-11-23','160');
 insert into compras(id_compra,cedula,fecha_compra,monto)
-values('10','1677677677','2024-11-23','160')
+values('10','1727374777','2024-11-23','160')
