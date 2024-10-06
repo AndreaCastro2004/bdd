@@ -3,16 +3,20 @@ create table plataformas(
 	id_plataforma int,
 	nombre_plataforma varchar(50) not null,
 	codigo_videojuego int,
-	constraint plataformas_pk primary key (codigo_videojuego)
 )
---referencio
-alter table videojuegos
-drop constraint videojuegos_plataformas_fk foreign key (codigo)
-references plataformas (codigo_videojuego)
-
+delete from plataformas
+--corrijo la llave y la restriccion
+alter table plataformas
+drop constraint plataformas_pk cascade
+alter table plataformas
+add constraint plataformas_pk primary key (id_plataforma)
+--
+select *from plataformas
 --insert
 insert into plataformas(id_plataforma,nombre_plataforma,codigo_videojuego)
 values (1,'Pc','123');
+insert into plataformas(id_plataforma,nombre_plataforma,codigo_videojuego)
+values (111,'Pc','123');
 insert into plataformas(id_plataforma,nombre_plataforma,codigo_videojuego)
 values (2,'Nintendo','1234');
 insert into plataformas(id_plataforma,nombre_plataforma,codigo_videojuego)

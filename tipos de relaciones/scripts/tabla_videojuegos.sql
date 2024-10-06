@@ -7,6 +7,11 @@ create videojuegos(
 	constraint videojuegos_pk primary key(codigo)
 )
 delete from videojuegos
+--instanciar la tabla con plataforma
+alter table plataformas
+add constraint videojugos_plataforma_fk foreign key (codigo_videojuego)
+references videojuegos (codigo)
+
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
 values(123, 'Call of Duty', 'Guerra', 9);
 insert into videojuegos(codigo, nombre, descripcion, valoracion)
