@@ -36,3 +36,19 @@ insert into empleado(codigo_empleado,nombre,fecha,hora)
 values(6207,'Andres','2022-09-12','9:30');
 insert into empleado(codigo_empleado,nombre,fecha,hora)
 values(6271,'Francisco','2022-10-12','10:25')
+
+select * from empleado
+select * from registros_entrada
+--consultas
+select re.cedula_empleado,re.fecha,em.nombre from 
+empleado em,registros_entrada re
+where em.codigo_empleado=re.codigo_empleado
+and ((re.fecha between '2023-08-01' and '2023-08-31')
+or (cedula_empleado like '17%') and (re.hora between '8:00' and '12:00'))
+or ((re.fecha between '2023-10-06' and '2023-10-20')
+and (cedula_empleado like '08%') and (re.hora between '9:00' and '13:00')) 
+--subconsultas
+select em.* from 
+empleado em,registros_entrada re
+where em.codigo_empleado=re.codigo_empleado
+and em.codigo_empleado=2201
