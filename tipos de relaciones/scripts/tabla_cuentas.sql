@@ -6,116 +6,38 @@ create table cuentas(
 	cedula_propietario char(5) not null ,
 	fecha_creacion date not null,
 	saldo money not null,
-	constraint cuentas_pk primary key(cedula_propietario)
 )
+--para eliminar un objeto que esta referenciado con otra tabla
+alter table cuentas
+drop constraint cuentas_pk cascade
+--para agregar nueva llave
+alter table cuentas
+add constraint cuentas_pk primary key (numero_cuenta)
 
+select *from cuentas
 delete from cuentas
---modifico la tabla personas
-alter table usuarios
-add constraint usuario_cuntas_fk
-foreign key (cedula)
-references cuentas (cedula_propietario)
---inserto a la tabla usuarios
-insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values('17189','Josefina','Veracruz','Ahorros','100')
-select *from usuarios
-
----realizo insert a cuentas
+--agrego insert 
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17181','2022-08-21','110');
+values ('11113','12345','2022-08-21','100');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17111','2022-09-11','210');
+values ('00000','08765','2022-09-21','170');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17222','2022-10-18','370');
+values ('01111','43210','2022-10-11','230');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17133','2022-11-30','470');
+values ('02222','23232','2022-11-30','307');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17444','2022-12-31','500');
+values ('03333','24242','2022-12-25','405');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17343','2023-01-10','470');
+values ('04444','17171','2023-01-15','503');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17565','2023-06-29','700');
+values ('05555','34343','2023-02-03','610');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17676','2023-07-17','800');
+values ('06666','56565','2023-05-24','730');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17787','2023-08-18','900');
+values ('07777','45454','2023-07-19','850');
 insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('12345','17898','2023-09-21','1000')
+values ('08880','76767','2023-09-21','1000')
 
 
 
-
-
-
-
-
---traer el numero de cuenta y saldo de las cuentas
-select numero_cuenta,saldo from cuentas 
---traer registros de hoy hasta 2 meses antes
-select * from cuentas 
-where fecha_creacion
-between '18/09/2024' and '18/07/2024'
---traer numero_cuenta y saldo de hoy hasta 2 meses antes
-select numero_cuenta,saldo from cuentas
-where fecha_creacion
-between '18/09/2024' and '18/07/2024'
-
-
---1
-select numero_cuenta,saldo from cuentas
-where saldo>money(100) and saldo<money(1000)
---2
-select * from cuentas
-where fecha_creacion between '19/9/2024' and '19/9/2023'
---3
-select * from cuentas
-where saldo='0' or cedula_propietario like '%2'
-
-
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25569,17504,'15/01/2030',500);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25570,17500,'01/11/2028',600);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25571,17501,'22/01/2023',700);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25572,17508,'30/05/2022',800);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25573,17509,'15/03/2023',900);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25574,17510,'15/05/2023',1000);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25575,17507,'15/09/2023',1500);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25576,17515,'15/10/2024',2500);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25577,17512,'15/08/2025',3500);
-insert into cuentas (numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values (25578,17503,'15/06/2017',4500);
-
-
-
-
-
-
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('12345','17181','17/09/2004',100)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('13345','11922','27/08/2004',150)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('11315','11111','16/05/2004',160)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('22223','23423','12/12/2005',170)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('12375','17161','17/03/2005',180)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('19845','97181','27/04/2005',190)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('86800','17181','30/05/2005',200)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('54321','54321','2/06/2005',210)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('67890','09342','10/06/2005',220)
-insert into cuentas(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values('09876','23490','24/06/2005',230)
 
