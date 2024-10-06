@@ -48,7 +48,7 @@ or (cedula_empleado like '17%') and (re.hora between '8:00' and '12:00'))
 or ((re.fecha between '2023-10-06' and '2023-10-20')
 and (cedula_empleado like '08%') and (re.hora between '9:00' and '13:00')) 
 --subconsultas
-select em.* from 
+select re.codigo_registro,em.nombre from 
 empleado em,registros_entrada re
 where em.codigo_empleado=re.codigo_empleado
 and em.codigo_empleado=2201
