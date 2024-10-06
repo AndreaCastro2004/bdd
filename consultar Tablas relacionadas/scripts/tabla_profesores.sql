@@ -32,3 +32,16 @@ insert into profesores(codigo,nombre)
 values (0009,'Azul');
 insert into profesores(codigo,nombre)
 values (0010,'Bartolomeo')
+
+select *from profesores
+select *from estudiantes
+--realizo consulta
+select pro.codigo, es.nombre,es.apellido from
+estudiantes es,profesores pro
+where es.codigo_profesor = pro.codigo
+and apellido like 'N%'
+--realizp subconsulta
+select es.* from
+estudiantes es,profesores pro
+where es.codigo_profesor = pro.codigo
+and pro.nombre='Francisco'
