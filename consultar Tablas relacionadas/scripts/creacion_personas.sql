@@ -39,3 +39,14 @@ values ('1254544544','Godinez','Reyes',3,1.99,'15/03/2006','13:00',100.87);
 insert into personas(cedula,nombre,apellido,numero_hijos,estatura,fecha_nacimiento,hora_nacimiento,cantidad_ahorrada)
 values ('1235545455','Susan','sol',3,1.99,'15/03/2006','13:00',100.87);
 
+select * from prestamo
+--consulta 
+select pe.cantidad_ahorrada,pre.monto,pre.garante from
+personas pe,prestamo pre
+where pe.cedula=pre.cedula
+and monto between money(100) and money(1000)
+--subconsulta
+select pe.* from
+personas pe,prestamo pre
+where pe.cedula=pre.cedula
+and nombre= 'Sean'
