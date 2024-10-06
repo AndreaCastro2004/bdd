@@ -10,6 +10,7 @@ alter table usuarios
 add constraint usuarios_pk primary key (cedula),
 delete from usuarios
 select * from usuarios
+select * from cuentas
 
 --modifico la tabla Cuentas
 alter table cuentas
@@ -37,3 +38,14 @@ insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
 values ('45454','Monica','Soliz','Ahorro','900');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
 values ('76767','Bella','Godinez','Ahorro','1000')
+
+---consultar tabla relacionadas
+select cu.numero_cuenta, us.nombre from
+usuarios us, cuentas cu
+where cu.cedula_propietario=us.cedula
+and saldo between money(100) and money(1000)
+--subconsulta
+select cu.numero_cuenta,cu.fecha_creacion,cu.saldo, us.cedula from
+usuarios us, cuentas cu
+where cu.cedula_propietario=us.cedula
+and fecha_creacion between '2022-09-21' and '2023-09-21'
