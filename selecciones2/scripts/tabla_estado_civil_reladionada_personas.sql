@@ -21,8 +21,8 @@ add constraint personas_estado_civil_fk foreign key (estado_civil_codigo)
 references estado_civil (codigo)
 
 --aqui nos marcaria error porque no emos ingresado nada en la tabla estado civil
-insert into personas (cedula,nombre,apellido,estado_civil_codigo)
-values ('1718161732','Mack','Zurita','C')
+insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
+values ('1718161732','Mack','Zurita','2007-09-12','C')
 
 select * from personas
 --procedemos a agregar codigo a la tabla estado_civil
@@ -35,3 +35,12 @@ values ('S','Soltero')
 
 select *from estado_civil
 
+--para mostrar la union de las 2 tablas cque correspondan con el codigo ingresado 
+select * from 
+personas pe,estado_civil ec
+where pe.estado_civil_codigo =ec.codigo
+--para mostar tablas correspondientes
+select pe.nombre,pe.apellido,pe.cedula,ec.descripcion from 
+personas pe,estado_civil ec
+where pe.estado_civil_codigo =ec.codigo --este es para que solo me traiga los que seaniguales al codigo
+and nombre like '%k' --tambien podemos poner condiciones

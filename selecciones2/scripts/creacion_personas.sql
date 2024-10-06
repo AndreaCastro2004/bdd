@@ -39,9 +39,9 @@ where EXTRACT(MONTH FROM fecha_nacimiento)=8
 
 
 --el insert into sirve para agregar informacion a la columna 
-insert into personas(cedula,nombre,apellido,estatura)
+insert into personas(cedula,nombre,apellido,estatura,estado_civil_codigo)
 --el value agrega la informacion a la columna correspondiente
-values ('1234567890','andi','solo',1.89)
+values ('1234567890','andi','solo',1.89,'C')
 
 --los que no tienen not null son occionales
 insert into personas(cedula,nombre,apellido,estatura)
