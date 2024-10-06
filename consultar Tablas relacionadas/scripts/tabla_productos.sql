@@ -36,8 +36,16 @@ values (20,'Jamon',1.00,120);
 insert into productos(codigo,nombre,precio,stock)
 values (21,'Coca Cola',3.50,300);
 
+select * from ventas
+--consulta
+select pro.nombre, pro.stock, ven.cantidad from 
+productos pro, ventas ven
+where ven.codigo_producto=pro.codigo
+or descripcion=null and nombre like 'M%'
 
-
-
-
+--subconsulta
+select pro.nombre, pro.stock from 
+productos pro, ventas ven
+where ven.codigo_producto=pro.codigo
+and cantidad =5
 
