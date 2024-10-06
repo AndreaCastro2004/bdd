@@ -4,14 +4,20 @@ create table ventas(
 	codigo_producto int not null,
 	fecha_venta date not null,
 	cantidad int,
-	constraint ventas_pk primary key (id_venta)
+	constraint ventas_pk primary key (codigo_producto)
 )
---referenciar table
-alter table productos
-add constraint productos_ventas_fk foreign key (codigo)
-references ventas(codigo_producto)
+delete from ventas
+--cambio la llave a id_venta
+alter table ventas
+drop constraint ventas_pk
+alter table ventas
+add constraint ventas_pk primary key (id_venta)
+--
 select * from ventas
 select * from productos
+--elimino el constraint foreign 
+alter table productos
+drop constraint productos_ventas_fk cascade
 --10 insert
 insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
 values('1','12','2023-09-12','5');

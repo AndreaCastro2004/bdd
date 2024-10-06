@@ -8,18 +8,21 @@ create table productos(
 	stock int not null,
 	constraint productos_pk primary key(codigo)
 )
-
-
+delete from productos
+--referencio con la tabla  ventas
+alter table ventas
+add constraint productos_ventas_fk foreign key (codigo_producto)
+references productos(codigo)
 
 
 insert into productos(codigo,nombre,precio,stock) 
 values (12,'Mantel',3.50,10);
 insert into productos(codigo,nombre,descripcion,precio,stock) 
-values (13,'Mariscos',2.50,20);
+values (13,'Mariscos','Frescura sinigual',2.50,20);
 insert into productos(codigo,nombre,descripcion,precio,stock) 
-values (14,'Mantequilla',1.50,30);
+values (14,'Mantequilla','100% natural',1.50,30);
 insert into productos(codigo,nombre,descripcion,precio,stock) 
-values (15,'Mayonesa','Fortident',3.0,40);
+values (15,'Mayonesa','Con las mejores especias',3.0,40);
 insert into productos(codigo,nombre,descripcion,precio,stock) 
 values (16,'Manteca','Para las comidas',2.50,50);
 insert into productos(codigo,nombre,precio,stock) 
