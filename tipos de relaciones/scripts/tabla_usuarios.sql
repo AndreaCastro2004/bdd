@@ -20,20 +20,20 @@ references usuarios (cedula)
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
 values ('12345','Federica','Mercedes','Ahorros','100');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('08765','Rosita','Gonzales','Ahorro','200');
+values ('08765','Rosita','Gonzales','Ahorros','200');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
 values ('43210','Marmota','Duran','Corriente','370');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('23232','Baron','Gilden','Ahorro','470');
+values ('23232','Baron','Gilden','Ahorros','470');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('24242','Haru','Vermudez','Ahorro','500');
+values ('24242','Haru','Vermudez','Ahorros','500');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
 values ('17171','Nanami','Surita','Corriente','470');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('34343','Modesto','Andrade','Ahorro','700');
+values ('34343','Modesto','Andrade','Ahorros','700');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('56565','Juan','Silva','Ahorro','800');
+values ('56565','Juan','Silva','Ahorros','800');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('45454','Monica','Soliz','Ahorro','900');
+values ('45454','Monica','Soliz','Ahorros','900');
 insert into usuarios (cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('76767','Bella','Godinez','Ahorro','1000')
+values ('76767','Bella','Godinez','Ahorros','1000')

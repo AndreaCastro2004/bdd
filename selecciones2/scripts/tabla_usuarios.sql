@@ -9,4 +9,4 @@ create table usuarios (
 select * from usuarios
 
 insert into usuarios(cedula,nombre,apellido,tipo_cuenta,limite_credito)
-values ('17111','romina','Mariz','Ahorro','150')
+values ('17111','romina','Mariz','Ahorros','150')
