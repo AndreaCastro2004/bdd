@@ -24,6 +24,12 @@ references estado_civil (codigo)
 insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
 values ('1718161732','Mack','Zurita','2007-09-12','C')
 
+insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
+values ('1618161732','Mack','Zurita','2007-09-12','S');
+insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
+values ('1218161732','Mack','Zurita','2007-09-12','S');
+insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
+values ('1818161732','Mack','Zurita','2007-09-12','U');
 select * from personas
 --procedemos a agregar codigo a la tabla estado_civil
 insert into estado_civil (codigo,descripcion)
