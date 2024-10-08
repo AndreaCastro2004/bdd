@@ -8,6 +8,8 @@ alter table estudiantes
 add column codigo_profesor int 
 select *from estudiantes
 --referenciarlo con estudiantes
+--OJO(el foreign key es para la tabla con relacion a muchos y el references
+--es para la tabla referenciada a un solo producto)
 alter table estudiantes
 add constraint profesores_estudiantes_fk foreign key (codigo_profesor)
 references profesores(codigo)
