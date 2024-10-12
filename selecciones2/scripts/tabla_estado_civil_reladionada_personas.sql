@@ -21,8 +21,8 @@ add constraint personas_estado_civil_fk foreign key (estado_civil_codigo)
 references estado_civil (codigo)
 
 --aqui nos marcaria error porque no emos ingresado nada en la tabla estado civil
-insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
-values ('1718161732','Mack','Zurita','2007-09-12','C')
+insert into personas (cedula,nombre,apellido,estado_civil_codigo)
+values ('1718161732','Mack','Zurita','C');
 
 insert into personas (cedula,nombre,apellido,fecha_nacimiento,estado_civil_codigo)
 values ('1618161732','Mack','Zurita','2007-09-12','S');

@@ -11,6 +11,9 @@ create table personas(
 	constraint personas_pk primary key(cedula)
 )
 
+DROP table personas
+alter table personas
+alter column fecha_nacimiento drop not null ;
 select * from personas
 --actualiza el numero_hijos=2 (transaccion>100 y <500 en mes 9 entre 14:00 y 20:00)
 update personas set numero_hijos='2'
