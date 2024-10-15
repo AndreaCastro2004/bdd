@@ -6,7 +6,8 @@ create table cuentas(
 	saldo money not null,
 	constraint cuentas_pk primary key(numero_cuenta)
 )
-
+select * from usuarios
+delete from usuarios where cedula='12049'
 select *from cuentas
 --actualizar el saldo de las cedulas que empiecen por 17
 update cuentas set saldo=10
