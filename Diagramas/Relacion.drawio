@@ -597,7 +597,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-Nz0ekPg0YuDuWIFUY3_-121" value="referencia varchar(100)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="-Nz0ekPg0YuDuWIFUY3_-119" vertex="1">
+        <mxCell id="-Nz0ekPg0YuDuWIFUY3_-121" value="referencia varchar(100) not null" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="-Nz0ekPg0YuDuWIFUY3_-119" vertex="1">
           <mxGeometry x="30" width="220" height="30" as="geometry">
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
